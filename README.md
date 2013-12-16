@@ -1,5 +1,5 @@
-Very Native Scollbar
-====================
+Very Native Scrollbar
+=====================
 
 This small library gives you a tiny API to create and interact with a native browser scrollbar.
 
