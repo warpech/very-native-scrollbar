@@ -1,0 +1,54 @@
+<!doctype html>
+<title>Very Native Scollbar</title>
+
+<script src="src/very_native_scrollbar.js"></script>
+
+<div>
+  <h1>Very Native Scrollbar</h1>
+
+  <p>This small library gives you a tiny API to create and interact with a native browser scrollbar.</p>
+</div>
+
+<div>
+  <h1>Horizontal</h1>
+
+  <button onclick="scroll_1.setPositionPx(700)">setPositionPx(700)</button>
+  <button onclick="scroll_1.setPositionFactor(0.5)">setPositionFactor(0.5)</button>
+
+  <pre id="horizontal_console">Incomplete configuration</pre>
+</div>
+
+<div>
+  <h1>Vertical</h1>
+
+  <button onclick="scroll_2.setPositionPx(700)">setPositionPx(700)</button>
+  <button onclick="scroll_2.setPositionFactor(0.5)">setPositionFactor(0.5)</button>
+
+  <pre id="vertical_console">Incomplete configuration</pre>
+</div>
+
+<script>
+  function showInfo(scroller, pre) {
+    pre.innerHTML = "Current position: " + scroller.getPositionFactor() + " (" + scroller.getPositionPx() + " px)";
+  }
+
+  var scroll_1 = new CreateVirtualScroller();
+  scroll_1.setTop(183);
+  scroll_1.setLeft(295);
+  scroll_1.setWidth(100);
+  scroll_1.setScrolledWidth(1000);
+  scroll_1.callback = function () {
+    showInfo(scroll_1, document.getElementById('horizontal_console'));
+  };
+  showInfo(scroll_1, document.getElementById('horizontal_console'));
+
+  var scroll_2 = new CreateVirtualScroller();
+  scroll_2.setTop(318);
+  scroll_2.setLeft(295);
+  scroll_2.setHeight(200);
+  scroll_2.setScrolledHeight(1000);
+  scroll_2.callback = function () {
+    showInfo(scroll_2, document.getElementById('vertical_console'));
+  };
+  showInfo(scroll_2, document.getElementById('vertical_console'));
+</script>
