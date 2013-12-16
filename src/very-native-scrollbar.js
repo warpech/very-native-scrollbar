@@ -4,7 +4,7 @@
  *
  * Copyright 2013, Marcin Warpechowski
  * Licensed under the MIT license.
- * https://github.com/warpech/very_native_scrollbar
+ * https://github.com/warpech/very-native-scrollbar
  */
 
 function VeryNativeScrollbar() {

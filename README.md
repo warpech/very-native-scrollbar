@@ -3,7 +3,7 @@ Very Native Scrollbar
 
 This small library gives you a tiny API to create and interact with a native browser scrollbar.
 
-Live example: http://warpech.github.io/very_native_scrollbar/
+Live example: http://warpech.github.io/very-native-scrollbar
 
 ### API
 
