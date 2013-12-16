@@ -1,17 +1,17 @@
 ﻿function VeryNativeScrollbar() {
+  this.systemScrollbarSize = null;
+  this.positionable = null;
+  this.callback = null;
+  
   this.DIV = document.createElement('DIV');
   this.DIV.className = 'ht_virtual_scroller';
   this.DIV.style.display = 'none';
   this.DIV.style.position = 'fixed';
   this.DIV.style.background = 'yellow'; //debug
-  this.systemScrollbarSize = null;
-  this.positionable = null;
 
   this.innerDIV = document.createElement('DIV');
-
   this.DIV.appendChild(this.innerDIV);
   document.body.appendChild(this.DIV);
-
   this.DIV.addEventListener('scroll', this.onScroll.bind(this));
 }
 
@@ -19,6 +19,10 @@ VeryNativeScrollbar.prototype.onScroll = function () {
   if (this.callback) {
     this.callback();
   }
+};
+
+VeryNativeScrollbar.prototype.setScrollCallback = function (fn) {
+  this.callback = fn;
 };
 
 VeryNativeScrollbar.prototype.setTop = function (value) {

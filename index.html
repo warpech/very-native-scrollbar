@@ -37,9 +37,9 @@
   scroll_1.setLeft(310);
   scroll_1.setWidth(100);
   scroll_1.setScrolledWidth(1000);
-  scroll_1.callback = function () {
+  scroll_1.setScrollCallback(function () {
     showInfo(scroll_1, document.getElementById('horizontal_console'));
-  };
+  });
   showInfo(scroll_1, document.getElementById('horizontal_console'));
 
   var scroll_2 = new VeryNativeScrollbar();
@@ -47,9 +47,9 @@
   scroll_2.setLeft(310);
   scroll_2.setHeight(200);
   scroll_2.setScrolledHeight(1000);
-  scroll_2.callback = function () {
+  scroll_2.setScrollCallback(function () {
     showInfo(scroll_2, document.getElementById('vertical_console'));
-  };
+  });
   showInfo(scroll_2, document.getElementById('vertical_console'));
 </script>
 
