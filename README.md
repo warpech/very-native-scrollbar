@@ -54,3 +54,7 @@ Sets the scrollbar handle position in relative value from 0 to 1.
 #### getPositionFactor ( ) : `number`
 
 Returns the current scrollbar handle position in relative value from 0 to 1.
+
+## License
+
+MIT (see the LICENSE file)

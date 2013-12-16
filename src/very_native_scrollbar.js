@@ -1,4 +1,13 @@
-﻿function VeryNativeScrollbar() {
+﻿/**
+ * Very Native Scrollbar
+ * This small library gives you a tiny API to create and interact with a native browser scrollbar.
+ *
+ * Copyright 2013, Marcin Warpechowski
+ * Licensed under the MIT license.
+ * https://github.com/warpech/very_native_scrollbar
+ */
+
+function VeryNativeScrollbar() {
   this.systemScrollbarSize = null;
   this.positionable = null;
   this.callback = null;
