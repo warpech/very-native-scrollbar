@@ -1,4 +1,6 @@
-very_native_scrollbar
-=====================
+Very Native Scollbar
+====================
 
-JavaScript library that creates a system scrollbar and gives you API to interact with it
+This small library gives you a tiny API to create and interact with a native browser scrollbar.
+
+Live example: http://warpech.github.io/very_native_scrollbar/
