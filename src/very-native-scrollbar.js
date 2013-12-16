@@ -1,5 +1,5 @@
 ﻿/**
- * Very Native Scrollbar
+ * Very Native Scrollbar v0.0.20131216
  * This small library gives you a tiny API to create and interact with a native browser scrollbar.
  *
  * Copyright 2013, Marcin Warpechowski
