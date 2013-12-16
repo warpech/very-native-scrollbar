@@ -2,7 +2,7 @@
   this.systemScrollbarSize = null;
   this.positionable = null;
   this.callback = null;
-  
+
   this.DIV = document.createElement('DIV');
   this.DIV.className = 'ht_virtual_scroller';
   this.DIV.style.display = 'none';
@@ -12,10 +12,10 @@
   this.innerDIV = document.createElement('DIV');
   this.DIV.appendChild(this.innerDIV);
   document.body.appendChild(this.DIV);
-  this.DIV.addEventListener('scroll', this.onScroll.bind(this));
+  this.DIV.addEventListener('scroll', this._onScroll.bind(this));
 }
 
-VeryNativeScrollbar.prototype.onScroll = function () {
+VeryNativeScrollbar.prototype._onScroll = function () {
   if (this.callback) {
     this.callback();
   }
@@ -41,7 +41,7 @@ VeryNativeScrollbar.prototype.setWidth = function (value) {
   this.positionable = 'width';
   this.DIV.style.overflowX = 'scroll';
   this.DIV.style.overflowY = 'hidden';
-  this.DIV.style.height = this.getScrollbarSize('height') + 'px';
+  this.DIV.style.height = this._getScrollbarSize('height') + 'px';
 };
 
 VeryNativeScrollbar.prototype.setHeight = function (value) {
@@ -50,7 +50,7 @@ VeryNativeScrollbar.prototype.setHeight = function (value) {
   this.positionable = 'height';
   this.DIV.style.overflowX = 'hidden';
   this.DIV.style.overflowY = 'scroll';
-  this.DIV.style.width = this.getScrollbarSize('width') + 'px';
+  this.DIV.style.width = this._getScrollbarSize('width') + 'px';
 };
 
 VeryNativeScrollbar.prototype.setScrolledWidth = function (value) {
@@ -105,14 +105,14 @@ VeryNativeScrollbar.prototype.getPositionFactor = function () {
   }
 };
 
-VeryNativeScrollbar.prototype.uppercaseFirst = function (str) {
+VeryNativeScrollbar.prototype._uppercaseFirst = function (str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 };
 
-VeryNativeScrollbar.prototype.getScrollbarSize = function (prop) {
+VeryNativeScrollbar.prototype._getScrollbarSize = function (prop) {
   if (this.systemScrollbarSize === null) {
-    this.DIV.style[prop] = '30px'; //temporarily won't harm, will be overwritten where getScrollbarSize is used
-    this.systemScrollbarSize = this.DIV['offset' + this.uppercaseFirst(prop)] - this.DIV['client' + this.uppercaseFirst(prop)];
+    this.DIV.style[prop] = '30px'; //temporarily won't harm, will be overwritten where _getScrollbarSize is used
+    this.systemScrollbarSize = this.DIV['offset' + this._uppercaseFirst(prop)] - this.DIV['client' + this._uppercaseFirst(prop)];
   }
   return this.systemScrollbarSize;
 };
