@@ -24,7 +24,7 @@
   return (w1 - w2);
 }
 
-function CreateVirtualScroller() {
+function VeryNativeScrollbar() {
   this.DIV = document.createElement('DIV');
   this.DIV.className = 'ht_virtual_scroller';
   this.DIV.style.display = 'none';
@@ -41,23 +41,23 @@ function CreateVirtualScroller() {
   this.DIV.addEventListener('scroll', this.onScroll.bind(this));
 }
 
-CreateVirtualScroller.prototype.onScroll = function () {
+VeryNativeScrollbar.prototype.onScroll = function () {
   if (this.callback) {
     this.callback();
   }
 };
 
-CreateVirtualScroller.prototype.setTop = function (value) {
+VeryNativeScrollbar.prototype.setTop = function (value) {
   this.DIV.style.display = 'block';
   this.DIV.style.top = value + 'px';
 };
 
-CreateVirtualScroller.prototype.setLeft = function (value) {
+VeryNativeScrollbar.prototype.setLeft = function (value) {
   this.DIV.style.display = 'block';
   this.DIV.style.left = value + 'px';
 };
 
-CreateVirtualScroller.prototype.setWidth = function (value) {
+VeryNativeScrollbar.prototype.setWidth = function (value) {
   this.width = value;
   this.DIV.style.width = value + 'px';
   this.positionable = 'width';
@@ -66,7 +66,7 @@ CreateVirtualScroller.prototype.setWidth = function (value) {
   this.DIV.style.height = this.systemScrollbarSize + 'px';
 };
 
-CreateVirtualScroller.prototype.setHeight = function (value) {
+VeryNativeScrollbar.prototype.setHeight = function (value) {
   this.height = value;
   this.DIV.style.height = value + 'px';
   this.positionable = 'height';
@@ -75,19 +75,19 @@ CreateVirtualScroller.prototype.setHeight = function (value) {
   this.DIV.style.width = this.systemScrollbarSize + 'px';
 };
 
-CreateVirtualScroller.prototype.setScrolledWidth = function (value) {
+VeryNativeScrollbar.prototype.setScrolledWidth = function (value) {
   this.scrolledWidth = value;
   this.innerDIV.style.width = value + 'px';
   this.innerDIV.style.height = '1px';
 };
 
-CreateVirtualScroller.prototype.setScrolledHeight = function (value) {
+VeryNativeScrollbar.prototype.setScrolledHeight = function (value) {
   this.scrolledHeight = value;
   this.innerDIV.style.height = value + 'px';
   this.innerDIV.style.width = '1px';
 };
 
-CreateVirtualScroller.prototype.setPositionPx = function (value) {
+VeryNativeScrollbar.prototype.setPositionPx = function (value) {
   switch (this.positionable) {
     case 'width':
       this.DIV.scrollLeft = value;
@@ -98,7 +98,7 @@ CreateVirtualScroller.prototype.setPositionPx = function (value) {
   }
 };
 
-CreateVirtualScroller.prototype.getPositionPx = function () {
+VeryNativeScrollbar.prototype.getPositionPx = function () {
   if (this.positionable === 'width') {
     return this.DIV.scrollLeft;
   }
@@ -107,7 +107,7 @@ CreateVirtualScroller.prototype.getPositionPx = function () {
   }
 };
 
-CreateVirtualScroller.prototype.setPositionFactor = function (value) {
+VeryNativeScrollbar.prototype.setPositionFactor = function (value) {
   switch (this.positionable) {
     case 'width':
       this.DIV.scrollLeft = this.scrolledWidth * value;
@@ -118,7 +118,7 @@ CreateVirtualScroller.prototype.setPositionFactor = function (value) {
   }
 };
 
-CreateVirtualScroller.prototype.getPositionFactor = function () {
+VeryNativeScrollbar.prototype.getPositionFactor = function () {
   if (this.positionable === 'width') {
     return this.DIV.scrollLeft / this.scrolledWidth;
   }
