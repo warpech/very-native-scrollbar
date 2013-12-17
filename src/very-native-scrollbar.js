@@ -13,7 +13,7 @@ function VeryNativeScrollbar() {
   this.callback = null;
 
   this.DIV = document.createElement('DIV');
-  this.DIV.className = 'ht_virtual_scroller';
+  this.DIV.className = 'very-native-scrollbar';
   this.DIV.style.display = 'none';
   this.DIV.style.position = 'fixed';
   this.DIV.style.background = 'yellow'; //debug
