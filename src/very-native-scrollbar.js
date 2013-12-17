@@ -20,7 +20,7 @@ function VeryNativeScrollbar() {
 
   this.innerDIV = document.createElement('DIV');
   this.DIV.appendChild(this.innerDIV);
-  document.body.appendChild(this.DIV);
+  (document.body || document.documentElement).appendChild(this.DIV);
   this.DIV.addEventListener('scroll', this._onScroll.bind(this));
 }
 
