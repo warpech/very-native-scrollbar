@@ -55,6 +55,16 @@ Sets the scrollbar handle position in relative value from 0 to 1.
 
 Returns the current scrollbar handle position in relative value from 0 to 1.
 
+## Changelog
+
+#### v0.0.20131217
+
+Change class name to be `very-native-scrollbar`.
+
+#### v0.0.20131216
+
+Initial release
+
 ## License
 
 MIT (see the LICENSE file)
